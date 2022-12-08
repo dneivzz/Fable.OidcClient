@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>Fable.OidcClient</PackageId>
-    <Version>1.0.2</Version>
-    <Authors>Maciej Jarosiewicz</Authors>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Fable.OidcClient.Cybernara</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>Maciej Jarosiewicz; Kayden Bui</Authors>
+    <Company>Cybernara</Company>
     <PackageDescription>Fable binding for oidc-client javascript library</PackageDescription>
     <PackageTags>fsharp;fable;oidc;oidc-client;openid-connect</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/mjarosie/Fable.OidcClient</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dneivzz/Fable.OidcClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
@@ -15,9 +16,14 @@
     <Compile Include="Fable.OidcClient.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fable.Core" Version="3.1.5" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="*.fsproj; *.fs; *.js" PackagePath="fable\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="3.7.1" />
+  </ItemGroup>
+  <PropertyGroup>
+    <NpmDependencies>
+      <NpmPackage Name="oidc-client" Version="gt 1.11.0 lt 2.0.0" ResolutionStrategy="Max" />
+    </NpmDependencies>
+</PropertyGroup>
 </Project>
